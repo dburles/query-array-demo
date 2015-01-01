@@ -1,0 +1,30 @@
+<head>
+  <title>ir-query</title>
+</head>
+
+<template name="layout">
+  <h1>Iron Router Query Array Example</h1>
+
+  {{> yield}}
+</template>
+
+<template name="filters">
+  <p>Colours</p>
+  {{> filter type='colour'}}
+  <p>Animals</p>
+  {{> filter type='animal'}}
+</template>
+
+<template name="filter">
+  <div class="filter">
+    {{#each filters}}
+      {{> filterItem}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="filterItem">
+  <p>
+    <input checked={{isChecked type typeId}} type="checkbox" name="{{type}}" value="{{typeId}}"> {{name}}
+  </p>
+</template>
